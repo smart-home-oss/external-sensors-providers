@@ -1,6 +1,9 @@
 package lu.smarthome.externalsensorsproviders.weather.yahoo;
 
 
+import lu.smarthome.externalsensorsproviders.httpwrapper.HttpUriBuilder;
+import lu.smarthome.externalsensorsproviders.httpwrapper.HttpWrapper;
+import lu.smarthome.externalsensorsproviders.httpwrapper.RequestAttributes;
 import lu.smarthome.externalsensorsproviders.oauth.OauthHelper;
 import lu.smarthome.externalsensorsproviders.properties.YahooWeatherProperties;
 import lu.smarthome.externalsensorsproviders.weather.WeatherProvider;
@@ -8,20 +11,17 @@ import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.net.http.HttpHeaders;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 //@Component
 public class YahooProvider implements WeatherProvider {
 
-//    private final RestTemplate restTemplate;
+    private final HttpWrapper restTemplate;
     private final YahooWeatherProperties properties;
     private final OauthHelper oauthHelper;
 
     public YahooProvider(OauthHelper oauthHelper,
-                         @Qualifier("yahoo") RestTemplate restTemplate,
+                         HttpWrapper restTemplate,
                          YahooWeatherProperties properties) {
         this.restTemplate = restTemplate;
         this.oauthHelper = oauthHelper;
@@ -44,17 +44,23 @@ public class YahooProvider implements WeatherProvider {
         String signatureString = getSignatureString(nonce, timestamp);
         String oauthSignature = getSignature(signatureString);
 
-        HttpHeaders headers = getHttpHeaders(oauthSignature);
-        HttpEntity<String> request = new HttpEntity<>(null, headers);
+        Map<String, String> headers = getHttpHeaders(oauthSignature);
+        RequestAttributes<String> request;
+        request = new RequestAttributes<String>(Optional.empty(), Optional.of(headers));
 
-        ResponseEntity<String> response = restTemplate
-                .exchange(url, GET, request, String.class, Collections.emptyMap());
+//        ResponseEntity<String> response = restTemplate
+//                .get(url, request, String.class, Collections.emptyMap());
+//
+//        if (response.getStatusCode().is2xxSuccessful()) {
+//            return response::getBody;
+//        }
+//
+//        throw new ExternalSensorException(response.getStatusCode());
+//        
+        String response = restTemplate.get(url, request);
 
-        if (response.getStatusCode().is2xxSuccessful()) {
-            return response::getBody;
-        }
+        return () -> response;
 
-        throw new ExternalSensorException(response.getStatusCode());
     }
 
     @Override
@@ -63,11 +69,14 @@ public class YahooProvider implements WeatherProvider {
     }
 
     String getUrl() {
-        return UriComponentsBuilder
-                .fromHttpUrl(properties.getApiUrl())
-                .queryParam("location", properties.getLocation())
-                .queryParam("format", "json")
-                .toUriString();
+        return HttpUriBuilder
+                .toUrl(
+                        properties.getApiUrl(),
+                        "location",
+                        properties.getLocation(),
+                        "format",
+                        "json"
+                );
     }
 
     String getSignature(String signatureString) {
@@ -96,7 +105,7 @@ public class YahooProvider implements WeatherProvider {
         }
 
         try {
-            return GET.name() + "&" +
+            return "GET&" +
                     URLEncoder.encode(properties.getApiUrl(), "UTF-8") + "&" +
                     URLEncoder.encode(parametersList.toString(), "UTF-8");
         } catch (Exception e) {
@@ -106,13 +115,13 @@ public class YahooProvider implements WeatherProvider {
         throw new RuntimeException();
     }
 
-    HttpHeaders getHttpHeaders(String oauthSignature) {
-        HttpHeaders headers = new HttpHeaders();
+    Map<String, String> getHttpHeaders(String oauthSignature) {
+        Map<String, String> headers = new HashMap<>();
 
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("X-Yahoo-App-Id", properties.getAppId());
-        headers.add(
-                HttpHeaders.AUTHORIZATION,
+        headers.put("ContentType", "MediaType.APPLICATION_JSON");
+        headers.put("X-Yahoo-App-Id", properties.getAppId());
+        headers.put(
+                "Authorization",
                 "OAuth "
                         .concat("oauth_consumer_key=\"").concat(properties.getClientId())
                         .concat("\", oauth_nonce=\"").concat(oauthHelper.getNonce())
