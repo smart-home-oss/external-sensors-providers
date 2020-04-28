@@ -1,30 +1,22 @@
-package lu.smarthome.externalsensors.provider.weather.yahoo;
+package lu.smarthome.externalsensorsproviders.weather.yahoo;
 
-import lu.smarthome.externalsensors.config.properties.YahooWeatherProperties;
-import lu.smarthome.externalsensors.exception.ExternalSensorException;
-import lu.smarthome.externalsensors.oauth.OauthHelper;
-import lu.smarthome.externalsensors.provider.weather.WeatherProvider;
-import lu.smarthome.externalsensors.provider.weather.WeatherResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
+
+import lu.smarthome.externalsensorsproviders.oauth.OauthHelper;
+import lu.smarthome.externalsensorsproviders.properties.YahooWeatherProperties;
+import lu.smarthome.externalsensorsproviders.weather.WeatherProvider;
+import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.net.http.HttpHeaders;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.springframework.http.HttpMethod.GET;
-
-@Component
+//@Component
 public class YahooProvider implements WeatherProvider {
 
-    private final RestTemplate restTemplate;
+//    private final RestTemplate restTemplate;
     private final YahooWeatherProperties properties;
     private final OauthHelper oauthHelper;
 

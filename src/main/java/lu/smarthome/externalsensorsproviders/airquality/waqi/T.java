@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.airquality.waqi;
+package lu.smarthome.externalsensorsproviders.airquality.waqi;
 
 import lombok.Getter;
 import lombok.Setter;

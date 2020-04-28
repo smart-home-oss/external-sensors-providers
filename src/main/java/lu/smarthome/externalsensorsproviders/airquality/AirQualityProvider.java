@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.airquality;
+package lu.smarthome.externalsensorsproviders.airquality;
 
 public interface AirQualityProvider {
 

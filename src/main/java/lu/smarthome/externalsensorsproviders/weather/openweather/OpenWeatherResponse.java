@@ -1,10 +1,10 @@
-package lu.smarthome.externalsensors.provider.weather.openweather;
+package lu.smarthome.externalsensorsproviders.weather.openweather;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.Setter;
-import lu.smarthome.externalsensors.provider.weather.WeatherResponse;
+import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
 
 import java.util.List;
 

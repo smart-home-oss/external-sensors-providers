@@ -1,15 +1,7 @@
 package lu.smarthome.externalsensorsproviders.airquality.airvisual;
 
-import lu.smarthome.externalsensors.config.properties.AirVisualAirQualityProperties;
-import lu.smarthome.externalsensors.exception.ExternalSensorException;
-import lu.smarthome.externalsensors.provider.airquality.AirQualityProvider;
-import lu.smarthome.externalsensors.provider.airquality.AirQualityResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
+import lu.smarthome.externalsensorsproviders.airquality.AirQualityProvider;
+import lu.smarthome.externalsensorsproviders.properties.AirVisualAirQualityProperties;
 
 //@Qualifier("air-quality")
 //@Component("airvisual-airquality")

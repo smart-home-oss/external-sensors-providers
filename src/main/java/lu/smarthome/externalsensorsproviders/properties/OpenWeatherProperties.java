@@ -1,10 +1,7 @@
-package lu.smarthome.externalsensors.config;
+package lu.smarthome.externalsensorsproviders.properties;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
-@ConfigurationProperties("app.provider.weather.openweather")
-@Component
+//@ConfigurationProperties("app.provider.weather.openweather")
+//@Component
 public class OpenWeatherProperties {
 
     private String apiKey;

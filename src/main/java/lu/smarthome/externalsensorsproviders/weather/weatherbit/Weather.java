@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.weather.weatherbit;
+package lu.smarthome.externalsensorsproviders.weather.weatherbit;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;

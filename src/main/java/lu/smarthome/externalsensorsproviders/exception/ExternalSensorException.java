@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.exception;
+package lu.smarthome.externalsensorsproviders.exception;
 
 public class ExternalSensorException extends RuntimeException {
     private HttpStatus statusCode;

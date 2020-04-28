@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.weather.accu;
+package lu.smarthome.externalsensorsproviders.weather.accu;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;

@@ -1,19 +1,14 @@
-package lu.smarthome.externalsensors.oauth;
+package lu.smarthome.externalsensorsproviders.oauth;
 
 import lombok.extern.slf4j.Slf4j;
 import lu.smarthome.externalsensors.exception.OauthHelperException;
-import org.springframework.stereotype.Component;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SignatureException;
 import java.util.Base64;
 import java.util.Random;
-import java.util.UUID;
 
-@Component
+//@Component
 @Slf4j
 public class OauthHelper {
     private static final String HMAC_SHA1 = "HmacSHA1";

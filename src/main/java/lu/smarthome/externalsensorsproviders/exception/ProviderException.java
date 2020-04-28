@@ -1,6 +1,6 @@
 package lu.smarthome.externalsensorsproviders.exception;
 
-import lu.smarthome.externalsensors.provider.*;
+import lu.smarthome.externalsensorsproviders.ProviderType;
 
 import java.util.Arrays;
 import java.util.Set;

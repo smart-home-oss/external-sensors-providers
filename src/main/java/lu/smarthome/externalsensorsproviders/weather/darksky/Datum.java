@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.weather.darksky;
+package lu.smarthome.externalsensorsproviders.weather.darksky;
 
 import lombok.Getter;
 import lombok.Setter;

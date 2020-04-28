@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider;
+package lu.smarthome.externalsensorsproviders;
 
 public enum FormatMode {
     JSON, XML, HTML

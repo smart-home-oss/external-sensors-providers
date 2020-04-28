@@ -1,7 +1,5 @@
-package lu.smarthome.externalsensors.config.properties;
+package lu.smarthome.externalsensorsproviders.properties;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 //@Component
 //@ConfigurationProperties("app.provider.weather.weatherbit")

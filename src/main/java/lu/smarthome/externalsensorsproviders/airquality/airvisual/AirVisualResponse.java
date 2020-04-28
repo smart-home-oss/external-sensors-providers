@@ -2,7 +2,7 @@ package lu.smarthome.externalsensorsproviders.airquality.airvisual;
 
 import lombok.Getter;
 import lombok.Setter;
-import lu.smarthome.externalsensors.provider.airquality.AirQualityResponse;
+import lu.smarthome.externalsensorsproviders.airquality.AirQualityResponse;
 
 @Getter
 @Setter

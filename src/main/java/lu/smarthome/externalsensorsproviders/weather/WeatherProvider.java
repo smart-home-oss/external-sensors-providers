@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.weather;
+package lu.smarthome.externalsensorsproviders.weather;
 
 public interface WeatherProvider {
 

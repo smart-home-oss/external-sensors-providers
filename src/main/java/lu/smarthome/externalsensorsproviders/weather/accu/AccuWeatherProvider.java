@@ -1,15 +1,10 @@
-package lu.smarthome.externalsensors.provider.weather.accu;
+package lu.smarthome.externalsensorsproviders.weather.accu;
 
 import lu.smarthome.externalsensors.config.properties.AccuWeatherProperties;
 import lu.smarthome.externalsensors.exception.ExternalSensorException;
-import lu.smarthome.externalsensors.provider.weather.WeatherProvider;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
+import lu.smarthome.externalsensorsproviders.weather.WeatherProvider;
 
-@Component
+//@Component
 
 public class AccuWeatherProvider implements WeatherProvider {
 

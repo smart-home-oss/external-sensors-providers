@@ -1,23 +1,18 @@
-package lu.smarthome.externalsensors.provider.weather.weatherbit;
+package lu.smarthome.externalsensorsproviders.weather.weatherbit;
 
-import lu.smarthome.externalsensors.config.properties.WeatherbitWeatherProperties;
-import lu.smarthome.externalsensors.exception.ExternalSensorException;
-import lu.smarthome.externalsensors.provider.weather.WeatherProvider;
-import lu.smarthome.externalsensors.provider.weather.WeatherResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
-@Qualifier("weather")
-@Component("weatherbit-weather")
+import lu.smarthome.externalsensorsproviders.exception.ExternalSensorException;
+import lu.smarthome.externalsensorsproviders.properties.WeatherbitWeatherProperties;
+import lu.smarthome.externalsensorsproviders.weather.WeatherProvider;
+import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
+
+//@Qualifier("weather")
+//@Component("weatherbit-weather")
 public class WeatherbitProvider implements WeatherProvider {
 
     private final WeatherbitWeatherProperties properties;
 
-    private final RestTemplate restTemplate;
+//    private final RestTemplate restTemplate;
 
     public WeatherbitProvider(WeatherbitWeatherProperties properties, @Qualifier("generic") RestTemplate restTemplate) {
         this.properties = properties;

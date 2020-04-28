@@ -1,18 +1,15 @@
-package lu.smarthome.externalsensors.provider.weather.weatherbit;
+package lu.smarthome.externalsensorsproviders.weather.weatherbit;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.Setter;
-import lu.smarthome.externalsensors.exception.ProviderException;
-import lu.smarthome.externalsensors.provider.ProviderType;
-import lu.smarthome.externalsensors.provider.weather.WeatherResponse;
+import lu.smarthome.externalsensorsproviders.exception.ProviderException;
+import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static lu.smarthome.externalsensors.provider.ProviderType.WEATHER;
 
 @Getter
 @Setter

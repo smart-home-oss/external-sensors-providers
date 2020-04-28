@@ -1,18 +1,14 @@
-package lu.smarthome.externalsensors.provider.weather.openweather;
+package lu.smarthome.externalsensorsproviders.weather.openweather;
 
-import lu.smarthome.externalsensors.config.OpenWeatherProperties;
-import lu.smarthome.externalsensors.exception.ExternalSensorException;
-import lu.smarthome.externalsensors.provider.FormatMode;
-import lu.smarthome.externalsensors.provider.UnitsFormat;
-import lu.smarthome.externalsensors.provider.weather.WeatherProvider;
-import lu.smarthome.externalsensors.provider.weather.WeatherResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
-@Component
+import lu.smarthome.externalsensorsproviders.FormatMode;
+import lu.smarthome.externalsensorsproviders.UnitsFormat;
+import lu.smarthome.externalsensorsproviders.exception.ExternalSensorException;
+import lu.smarthome.externalsensorsproviders.properties.OpenWeatherProperties;
+import lu.smarthome.externalsensorsproviders.weather.WeatherProvider;
+import lu.smarthome.externalsensorsproviders.weather.WeatherResponse;
+
+//@Component
 public class OpenWeatherProvider implements WeatherProvider {
 
     private final OpenWeatherProperties properties;

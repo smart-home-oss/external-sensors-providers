@@ -1,4 +1,4 @@
-package lu.smarthome.externalsensors.provider.airquality.weatherbit;
+package lu.smarthome.externalsensorsproviders.airquality.weatherbit;
 
 import lu.smarthome.externalsensors.config.properties.WeatherbitAirQualityProperties;
 import lu.smarthome.externalsensors.exception.ExternalSensorException;
@@ -6,13 +6,12 @@ import lu.smarthome.externalsensors.provider.airquality.AirQualityProvider;
 import lu.smarthome.externalsensors.provider.airquality.AirQualityResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-@Qualifier("air-quality")
-@Component("weatherbit-airquality")
+//@Qualifier("air-quality")
+//@Component("weatherbit-airquality")
 public class WeatherbitProvider implements AirQualityProvider {
 
     private final WeatherbitAirQualityProperties properties;
